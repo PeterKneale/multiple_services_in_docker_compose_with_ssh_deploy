@@ -15,7 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{75F3
 		docker-compose-app1.yml = docker-compose-app1.yml
 		docker-compose-app2.yml = docker-compose-app2.yml
 		.dockerignore = .dockerignore
-		docker-compose.md = docker-compose.md
 		docker-compose-app1-integration.yml = docker-compose-app1-integration.yml
 		docker-compose-app1-unit.yml = docker-compose-app1-unit.yml
 		docker-compose-app2-integration.yml = docker-compose-app2-integration.yml
@@ -40,6 +39,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.UnitTests", "tests\App2.UnitTests\App2.UnitTests.csproj", "{E914343E-F475-47D8-870B-3A101BAC38EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy.IntegrationTests", "tests\Proxy.IntegrationTests\Proxy.IntegrationTests.csproj", "{11CE102A-B443-465B-B763-2C05D9EF83F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{79F9E92F-3B5C-48F9-9900-5B45856315B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
