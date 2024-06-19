@@ -1,4 +1,4 @@
-name: release
+name: release-app-1
 
 on:
   push:
@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: peterkneale/app1
 
 jobs:
-  release:
+  release-app-1:
     runs-on: ubuntu-latest
     permissions:
       contents: read
