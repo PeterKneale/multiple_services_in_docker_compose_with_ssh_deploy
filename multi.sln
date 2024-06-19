@@ -15,12 +15,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{75F3
 		docker-compose-app1.yml = docker-compose-app1.yml
 		docker-compose-app2.yml = docker-compose-app2.yml
 		.dockerignore = .dockerignore
+		docker-compose.md = docker-compose.md
+		docker-compose-app1-integration.yml = docker-compose-app1-integration.yml
+		docker-compose-app1-unit.yml = docker-compose-app1-unit.yml
+		docker-compose-app2-integration.yml = docker-compose-app2-integration.yml
+		docker-compose-app2-unit.yml = docker-compose-app2-unit.yml
+		docker-build.sh = docker-build.sh
+		docker-test.sh = docker-test.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{CDFEB191-8797-430F-B73F-B8EACB1A85B4}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EDD3321A-0248-4BCF-B343-77B4FE6657C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1.IntegrationTests", "tests\App1.IntegrationTests\App1.IntegrationTests.csproj", "{8D005F2F-3DCD-451A-AAB8-AB9BA832F961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1.UnitTests", "tests\App1.UnitTests\App1.UnitTests.csproj", "{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.IntegrationTests", "tests\App2.IntegrationTests\App2.IntegrationTests.csproj", "{FEC5E9FC-4A5F-4F2A-8876-0649AED95915}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.UnitTests", "tests\App2.UnitTests\App2.UnitTests.csproj", "{E914343E-F475-47D8-870B-3A101BAC38EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy.IntegrationTests", "tests\Proxy.IntegrationTests\Proxy.IntegrationTests.csproj", "{11CE102A-B443-465B-B763-2C05D9EF83F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +58,34 @@ Global
 		{4729907A-481F-49BA-9A40-C8F9F19F8D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4729907A-481F-49BA-9A40-C8F9F19F8D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4729907A-481F-49BA-9A40-C8F9F19F8D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D005F2F-3DCD-451A-AAB8-AB9BA832F961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D005F2F-3DCD-451A-AAB8-AB9BA832F961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D005F2F-3DCD-451A-AAB8-AB9BA832F961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D005F2F-3DCD-451A-AAB8-AB9BA832F961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC5E9FC-4A5F-4F2A-8876-0649AED95915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC5E9FC-4A5F-4F2A-8876-0649AED95915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC5E9FC-4A5F-4F2A-8876-0649AED95915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC5E9FC-4A5F-4F2A-8876-0649AED95915}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E914343E-F475-47D8-870B-3A101BAC38EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E914343E-F475-47D8-870B-3A101BAC38EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E914343E-F475-47D8-870B-3A101BAC38EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E914343E-F475-47D8-870B-3A101BAC38EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CE102A-B443-465B-B763-2C05D9EF83F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CE102A-B443-465B-B763-2C05D9EF83F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CE102A-B443-465B-B763-2C05D9EF83F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CE102A-B443-465B-B763-2C05D9EF83F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5120CD63-3856-4581-9800-15E08F31E713} = {95770CFD-5913-41F0-9C34-208FE1B22BA3}
 		{4729907A-481F-49BA-9A40-C8F9F19F8D43} = {95770CFD-5913-41F0-9C34-208FE1B22BA3}
+		{8D005F2F-3DCD-451A-AAB8-AB9BA832F961} = {EDD3321A-0248-4BCF-B343-77B4FE6657C6}
+		{1682AD5F-600B-4A85-BE7F-E37FF5B68CD5} = {EDD3321A-0248-4BCF-B343-77B4FE6657C6}
+		{FEC5E9FC-4A5F-4F2A-8876-0649AED95915} = {EDD3321A-0248-4BCF-B343-77B4FE6657C6}
+		{E914343E-F475-47D8-870B-3A101BAC38EC} = {EDD3321A-0248-4BCF-B343-77B4FE6657C6}
+		{11CE102A-B443-465B-B763-2C05D9EF83F9} = {EDD3321A-0248-4BCF-B343-77B4FE6657C6}
 	EndGlobalSection
 EndGlobal

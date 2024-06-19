@@ -1,0 +1,18 @@
+services:
+
+  app2-integration-tests:
+    container_name: app2-integration-tests
+    build:
+      context: .
+      dockerfile: ./src/App2/Dockerfile
+      target: test
+    environment:
+      - GITHUB_ACTIONS=${GITHUB_ACTIONS:-FALSE}
+    entrypoint:
+      - dotnet
+      - test
+      - -c=Release
+      - --no-build
+      - --nologo
+      - --filter=Type=Integration
+      - --logger=GitHubActions

@@ -13,6 +13,8 @@ COPY . .
 WORKDIR "/src/src/App2"
 RUN dotnet build "App2.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
+FROM build AS test
+
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "App2.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
