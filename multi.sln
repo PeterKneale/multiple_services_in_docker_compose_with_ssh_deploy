@@ -21,6 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{75F3
 		docker-compose-app2-unit.yml = docker-compose-app2-unit.yml
 		docker-build.sh = docker-build.sh
 		docker-test.sh = docker-test.sh
+		docker-compose-production.yml = docker-compose-production.yml
+		docs\docker-compose.md = docs\docker-compose.md
+		docker-compose-production.env = docker-compose-production.env
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{CDFEB191-8797-430F-B73F-B8EACB1A85B4}"
@@ -39,8 +42,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.UnitTests", "tests\App2.UnitTests\App2.UnitTests.csproj", "{E914343E-F475-47D8-870B-3A101BAC38EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxy.IntegrationTests", "tests\Proxy.IntegrationTests\Proxy.IntegrationTests.csproj", "{11CE102A-B443-465B-B763-2C05D9EF83F9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{79F9E92F-3B5C-48F9-9900-5B45856315B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

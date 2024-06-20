@@ -1,3 +1,32 @@
+## References
+https://www.docker.com/blog/how-to-deploy-on-remote-docker-hosts-with-docker-compose/
+https://docs.servicestack.net/ssh-docker-compose-deploment#docker-compose.yml
+
+## Remote Deployment
+
+Setup a new docker context for remote deployment
+```shell
+docker context create lightsail --docker "host=ssh://ubuntu@10.20.30.40"
+docker context ls
+docker context use lightsail
+docker context show
+```
+
+Load the appropriate ssh key into the ssh-agent
+```shell
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/aws.pem
+```
+
+show remote processes
+```shell
+docker-compose -f docker-compose-production.yml up
+docker-compose ps
+```
+
+##
+Local development
+
 ### Setup certs 
 The nginx will perform SSL termination for `app1.com` and `app2.com`
 
